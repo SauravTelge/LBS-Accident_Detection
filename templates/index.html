@@ -4,16 +4,88 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+    <title>Jeevan Paritrata</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
+</head>
+<style>
+  .center {
+  margin: auto;
+  width: 15%;
+  
+  padding: 10px;
+}
+  * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header {
+	background: black;
+	padding: 2em;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	box-shadow: 0 2px 6px -1px #333;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+.logo {
+	/* background: white; */
+	border-radius: 50%;
+	/* padding: 2em; */
+	position: absolute;
+	top: 110%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 -5px 0px -2px #333;
+  width: 120px;
+  height: 120px;
+}
+
+</style>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <h3 class="mt-5">Live Streaming</h3>
-          <img src="{{ url_for('video_feed') }}" width="100%" />
-        </div>
+    <header>
+      <a href="/">Home</a>
+      <a href="/">About</a>
+      <img src="../static/img/logo.png" class="logo"></img>
+    </header>
+    
+      <div class="jumbotron text-center">
+        <h1 class="display-3">Jeevan Paritrata</h1>
+        <p class="lead">A ML based <strong style="color: red;">accident</strong> management system.</p>
+        <hr>
+        <p>
+          <b>Proposed Solution</b>
+          <!-- <ul class="list-group list-group-flush">
+            <li class="list-group-item">Videos from security cameras will be taken and sent to a backend server. </li>
+            <li class="list-group-item">The videos will be then converted to frames</li>
+            <li class="list-group-item">The frames will be passed through a convolutional neural network that can identify if an accident has occurred in the image .</li>
+            <li class="list-group-item">Automated notification will be sent to the concerned authorities.</li>
+          </ul> -->
+        </p>
+        <img src="../static/img/solution.jpeg" alt="" srcset="" style="border-radius:20px ;">
+     
+        
       </div>
-    </div>
+  
+     <div class="container">
+        
+          <h2 class="mt-5">Live Streaming</h2>
+          <form action="/upload" method="post" enctype="multipart/form-data">
+             <div class="form-group">
+           
+            <label for="vid">Select video:</label>
+            <input type="file" id="vid" name="file" class="form-control-file">
+            <button class="btn btn-success"type="submit" style="margin-top: 10px;">Submit</button>
+        </form>
+    
+      <div class="container-fluid">
+          <img src="{{ url_for('video_feed') }}" width="80%" /></div>
+        </div>
+    
   </body>
 </html>
