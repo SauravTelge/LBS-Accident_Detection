@@ -17,15 +17,15 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from PIL import Image as im
-UPLOAD_FOLDER = "E:/LBS/website/lbs/static/example_clips"
+UPLOAD_FOLDER = "/tmp/example_clips"
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 global path
 path = '' 
-img_dir = 'E:/LBS/website/lbs/static/output_images/'
-model = 'E:/LBS/website/lbs/assets/model/activity.model'
-label_bin = 'E:/LBS/website/lbs/assets/model/lb.pickle'
-input_dir = 'E:/LBS/website/lbs/static/example_clips/testeer.mp4'
+img_dir = '/tmp/output_images/'
+model = './assets/model/activity.model'
+label_bin = './assets/model/lb.pickle'
+input_dir = './static/example_clips/testeer.mp4'
 size = 128
 model = load_model(model)
 lb = pickle.loads(open(label_bin, "rb").read())
@@ -119,7 +119,7 @@ def gen_frames():
             print("printing output before mailing it")
             # cv2.imshow("output",output)
             strFrom = 'lbtestingacc@gmail.com'
-            strTo = '2018.abhijit.thikekar@ves.ac.in'
+            strTo = '2018.saurav.telge@ves.ac.in'
             msgRoot = MIMEMultipart('related')
             msgRoot['Subject'] = 'Accident occured at this  location. send help'
             msgRoot['From'] = strFrom
@@ -157,7 +157,7 @@ def upload():
     f.filename=f.filename.replace(" ","_")
     f.save(os.path.join(app.config["UPLOAD_FOLDER"], f.filename))
     global path
-    path = f'E:/LBS/website/lbs/static/example_clips/{f.filename}'
+    path = f'/tmp/{f.filename}'
     return home()
 
 @app.route("/")
