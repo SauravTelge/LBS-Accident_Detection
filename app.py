@@ -10,7 +10,6 @@ from random import randrange
 from sklearn.preprocessing import LabelBinarizer
 # from google.colab.patches import cv2_imshow
 from keras.preprocessing import image
-import matplotlib.pyplot as plt
 import numpy as np
 import smtplib
 from email.mime.image import MIMEImage
