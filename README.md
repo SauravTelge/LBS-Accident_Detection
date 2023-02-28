@@ -6,7 +6,7 @@ Finalist team from around 50 participating teams.<br>
 <br>
 Created an accident detection system capable of detecting road accidents on video clips(<b>Resnet-50</b> architecture, Transfer learning on around 5000 images📷 with accuracy of 87 percentage) and then notifying medical authorities on email for instant assistance.
 <br>
-<br><h4>Tech Stack🖥 : Html, Bootstrap, JS, Flask, Tensorflow, Keras, OpenCV.</h4>
+<br><h4>Tech Stack🖥 : Flask, Tensorflow, Keras, OpenCV, Html, Bootstrap, JS.</h4>
 <br>
 <h4>Youtube link of demostration : https://www.youtube.com/watch?v=cPH-_ZDWOko</h4><br>
 
